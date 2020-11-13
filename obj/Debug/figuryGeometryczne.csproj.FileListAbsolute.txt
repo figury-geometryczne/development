@@ -1,0 +1,10 @@
+C:\Users\Bartek\Desktop\studia 3 rok 1 semestr\zespołowe\figuryGeometryczne\bin\Debug\figuryGeometryczne.exe.config
+C:\Users\Bartek\Desktop\studia 3 rok 1 semestr\zespołowe\figuryGeometryczne\bin\Debug\figuryGeometryczne.exe
+C:\Users\Bartek\Desktop\studia 3 rok 1 semestr\zespołowe\figuryGeometryczne\bin\Debug\figuryGeometryczne.pdb
+C:\Users\Bartek\Desktop\studia 3 rok 1 semestr\zespołowe\figuryGeometryczne\obj\Debug\figuryGeometryczne.csprojAssemblyReference.cache
+C:\Users\Bartek\Desktop\studia 3 rok 1 semestr\zespołowe\figuryGeometryczne\obj\Debug\figuryGeometryczne.Form1.resources
+C:\Users\Bartek\Desktop\studia 3 rok 1 semestr\zespołowe\figuryGeometryczne\obj\Debug\figuryGeometryczne.Properties.Resources.resources
+C:\Users\Bartek\Desktop\studia 3 rok 1 semestr\zespołowe\figuryGeometryczne\obj\Debug\figuryGeometryczne.csproj.GenerateResource.cache
+C:\Users\Bartek\Desktop\studia 3 rok 1 semestr\zespołowe\figuryGeometryczne\obj\Debug\figuryGeometryczne.csproj.CoreCompileInputs.cache
+C:\Users\Bartek\Desktop\studia 3 rok 1 semestr\zespołowe\figuryGeometryczne\obj\Debug\figuryGeometryczne.exe
+C:\Users\Bartek\Desktop\studia 3 rok 1 semestr\zespołowe\figuryGeometryczne\obj\Debug\figuryGeometryczne.pdb
