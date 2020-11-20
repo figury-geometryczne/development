@@ -65,14 +65,14 @@
             // pokazToolStripMenuItem
             // 
             this.pokazToolStripMenuItem.Name = "pokazToolStripMenuItem";
-            this.pokazToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
+            this.pokazToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.pokazToolStripMenuItem.Text = "Pokaż";
             this.pokazToolStripMenuItem.Click += new System.EventHandler(this.pokazToolStripMenuItem_Click);
             // 
             // ukryjToolStripMenuItem
             // 
             this.ukryjToolStripMenuItem.Name = "ukryjToolStripMenuItem";
-            this.ukryjToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
+            this.ukryjToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.ukryjToolStripMenuItem.Text = "Ukryj";
             this.ukryjToolStripMenuItem.Click += new System.EventHandler(this.ukryjToolStripMenuItem_Click);
             // 
@@ -101,18 +101,21 @@
             this.trojkatToolStripMenuItem.Name = "trojkatToolStripMenuItem";
             this.trojkatToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.trojkatToolStripMenuItem.Text = "Trójkąt";
+            this.trojkatToolStripMenuItem.Click += new System.EventHandler(this.trojkatToolStripMenuItem_Click);
             // 
             // prostokatToolStripMenuItem
             // 
             this.prostokatToolStripMenuItem.Name = "prostokatToolStripMenuItem";
             this.prostokatToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.prostokatToolStripMenuItem.Text = "Prostokąt";
+            this.prostokatToolStripMenuItem.Click += new System.EventHandler(this.prostokatToolStripMenuItem_Click);
             // 
             // koloToolStripMenuItem
             // 
             this.koloToolStripMenuItem.Name = "koloToolStripMenuItem";
             this.koloToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.koloToolStripMenuItem.Text = "Koło";
+            this.koloToolStripMenuItem.Click += new System.EventHandler(this.koloToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 

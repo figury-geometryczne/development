@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Punkty;
 using Uklady;
-using Kwadraty;
+using Figury;
 
 namespace figuryGeometryczne
 {
@@ -37,7 +37,7 @@ namespace figuryGeometryczne
         }
         private void pokazToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            siatka = new Uklad(siatka.X, siatka.Y, Color.LightGray, this);
+            siatka = new Uklad(siatka.X, siatka.Y, Color.Black, this);
             Invalidate();
         }
 
@@ -50,13 +50,31 @@ namespace figuryGeometryczne
         private void kwadratToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            figura = new Kwadrat(figura.X, figura.Y, Color.Black, this);
+            figura = new Kwadrat(figura.X, figura.Y, Color.Blue, this);
             Invalidate();
         }
 
         private void ukryjToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             figura = new Kwadrat(figura.X, figura.Y, Color.White, this);
+            Invalidate();
+        }
+
+        private void trojkatToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            figura = new Trojkat(figura.X, figura.Y, Color.Blue, this);
+            Invalidate();
+        }
+
+        private void prostokatToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            figura = new Prostokat(figura.X, figura.Y, Color.Blue, this);
+            Invalidate();
+        }
+
+        private void koloToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            figura = new Okrag(figura.X, figura.Y, 100, Color.Blue, this);
             Invalidate();
         }
     }
