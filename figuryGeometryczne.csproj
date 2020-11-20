@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Kwadraty.cs" />
     <Compile Include="Uklady.cs" />
     <Compile Include="Punkty.cs" />
     <Compile Include="Form1.cs">

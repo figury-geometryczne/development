@@ -20,7 +20,7 @@ namespace Punkty
             x = xPob;
             y = yPob;
             kolor = kol;
-            wid = false;
+            wid = true;
             okno = form;
         }
         protected virtual void Rysuj(Graphics g)
@@ -45,7 +45,7 @@ namespace Punkty
         {
             Color kol = kolor;
             kolor = okno.BackColor;
-            wid = false;
+            wid = true;
             Rysuj(g);
             kolor = kol;
         }
@@ -77,16 +77,7 @@ namespace Punkty
             {
                 return kolor;
             }
-            set
-            {
-                bool jest_widoczny = wid;
-                using (Graphics g = okno.CreateGraphics())
-                {
-                    if (jest_widoczny) Ukryj(g);
-                    kolor = value;
-                    if (jest_widoczny && (value != okno.BackColor)) Pokaż(g);
-                }
-            }
+
         }
 
         public bool Widoczny    // Widoczność punktu (własciwość)

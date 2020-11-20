@@ -8,3 +8,13 @@ C:\Users\Bartek\Desktop\studia 3 rok 1 semestr\zespołowe\figuryGeometryczne\obj
 C:\Users\Bartek\Desktop\studia 3 rok 1 semestr\zespołowe\figuryGeometryczne\obj\Debug\figuryGeometryczne.csproj.CoreCompileInputs.cache
 C:\Users\Bartek\Desktop\studia 3 rok 1 semestr\zespołowe\figuryGeometryczne\obj\Debug\figuryGeometryczne.exe
 C:\Users\Bartek\Desktop\studia 3 rok 1 semestr\zespołowe\figuryGeometryczne\obj\Debug\figuryGeometryczne.pdb
+C:\Users\AiXen\Desktop\Nowy folder\Program\bin\Debug\figuryGeometryczne.exe.config
+C:\Users\AiXen\Desktop\Nowy folder\Program\bin\Debug\figuryGeometryczne.exe
+C:\Users\AiXen\Desktop\Nowy folder\Program\bin\Debug\figuryGeometryczne.pdb
+C:\Users\AiXen\Desktop\Nowy folder\Program\obj\Debug\figuryGeometryczne.csprojAssemblyReference.cache
+C:\Users\AiXen\Desktop\Nowy folder\Program\obj\Debug\figuryGeometryczne.Form1.resources
+C:\Users\AiXen\Desktop\Nowy folder\Program\obj\Debug\figuryGeometryczne.Properties.Resources.resources
+C:\Users\AiXen\Desktop\Nowy folder\Program\obj\Debug\figuryGeometryczne.csproj.GenerateResource.cache
+C:\Users\AiXen\Desktop\Nowy folder\Program\obj\Debug\figuryGeometryczne.csproj.CoreCompileInputs.cache
+C:\Users\AiXen\Desktop\Nowy folder\Program\obj\Debug\figuryGeometryczne.exe
+C:\Users\AiXen\Desktop\Nowy folder\Program\obj\Debug\figuryGeometryczne.pdb

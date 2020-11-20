@@ -37,6 +37,8 @@
             this.trojkatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.prostokatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.koloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.ukryjToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,14 +65,14 @@
             // pokazToolStripMenuItem
             // 
             this.pokazToolStripMenuItem.Name = "pokazToolStripMenuItem";
-            this.pokazToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pokazToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
             this.pokazToolStripMenuItem.Text = "Pokaż";
             this.pokazToolStripMenuItem.Click += new System.EventHandler(this.pokazToolStripMenuItem_Click);
             // 
             // ukryjToolStripMenuItem
             // 
             this.ukryjToolStripMenuItem.Name = "ukryjToolStripMenuItem";
-            this.ukryjToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ukryjToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
             this.ukryjToolStripMenuItem.Text = "Ukryj";
             this.ukryjToolStripMenuItem.Click += new System.EventHandler(this.ukryjToolStripMenuItem_Click);
             // 
@@ -80,7 +82,9 @@
             this.kwadratToolStripMenuItem,
             this.trojkatToolStripMenuItem,
             this.prostokatToolStripMenuItem,
-            this.koloToolStripMenuItem});
+            this.koloToolStripMenuItem,
+            this.toolStripMenuItem1,
+            this.ukryjToolStripMenuItem1});
             this.rysujToolStripMenuItem.Name = "rysujToolStripMenuItem";
             this.rysujToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
             this.rysujToolStripMenuItem.Text = "Rysuj";
@@ -90,6 +94,7 @@
             this.kwadratToolStripMenuItem.Name = "kwadratToolStripMenuItem";
             this.kwadratToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.kwadratToolStripMenuItem.Text = "Kwadrat";
+            this.kwadratToolStripMenuItem.Click += new System.EventHandler(this.kwadratToolStripMenuItem_Click);
             // 
             // trojkatToolStripMenuItem
             // 
@@ -108,6 +113,18 @@
             this.koloToolStripMenuItem.Name = "koloToolStripMenuItem";
             this.koloToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.koloToolStripMenuItem.Text = "Koło";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
+            // 
+            // ukryjToolStripMenuItem1
+            // 
+            this.ukryjToolStripMenuItem1.Name = "ukryjToolStripMenuItem1";
+            this.ukryjToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.ukryjToolStripMenuItem1.Text = "Ukryj";
+            this.ukryjToolStripMenuItem1.Click += new System.EventHandler(this.ukryjToolStripMenuItem1_Click);
             // 
             // Form1
             // 
@@ -139,6 +156,8 @@
         private System.Windows.Forms.ToolStripMenuItem trojkatToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem prostokatToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem koloToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem ukryjToolStripMenuItem1;
     }
 }
 
