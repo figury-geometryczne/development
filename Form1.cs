@@ -20,19 +20,26 @@ namespace figuryGeometryczne
             InitializeComponent();
         }
 
-        private Punkt figura;
+        private Punkt[] figura = new Punkt[10];
         private Punkt siatka;
+        public int kol = 0;
 
         private void Form1_Load(object sender, EventArgs e)
         {
             var srodek = new Punkt(ClientSize.Width / 2, (ClientSize.Height + menuStrip1.Height) / 2, Color.Red, this);      // okresla srodek form1
-            figura = srodek;
+            for (int i=0; i<10; i++ )
+            {
+                figura[i] = srodek;
+            }
             siatka = srodek;
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
-            figura.Pokaż(e.Graphics);
+            for (int i = 0; i < 10; i++)
+            {
+                figura[i].Pokaż(e.Graphics);
+            }
             siatka.Pokaż(e.Graphics);
         }
         private void pokazToolStripMenuItem_Click(object sender, EventArgs e)
@@ -50,31 +57,36 @@ namespace figuryGeometryczne
         private void kwadratToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            figura = new Kwadrat(figura.X, figura.Y, Color.Blue, this);
+            figura[kol] = new Kwadrat(figura[kol].X, figura[kol].Y, Color.Green, this);
+            kol++;
             Invalidate();
         }
 
         private void ukryjToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            figura = new Kwadrat(figura.X, figura.Y, Color.White, this);
+            figura[kol] = new Kwadrat(figura[kol].X, figura[kol].Y, Color.White, this);
+            kol--;
             Invalidate();
         }
 
         private void trojkatToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            figura = new Trojkat(figura.X, figura.Y, Color.Blue, this);
+            figura[kol] = new Trojkat(figura[kol].X, figura[kol].Y, Color.Green, this);
+            kol++;
             Invalidate();
         }
 
         private void prostokatToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            figura = new Prostokat(figura.X, figura.Y, Color.Blue, this);
+            figura[kol] = new Prostokat(figura[kol].X, figura[kol].Y, Color.Green, this);
+            kol++;
             Invalidate();
         }
 
         private void koloToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            figura = new Okrag(figura.X, figura.Y, 100, Color.Blue, this);
+            figura[kol] = new Okrag(figura[kol].X, figura[kol].Y, 100, Color.Green, this);
+            kol++;
             Invalidate();
         }
     }
