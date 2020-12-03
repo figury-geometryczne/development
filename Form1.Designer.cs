@@ -28,139 +28,115 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.siatkaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pokazToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ukryjToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rysujToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.kwadratToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.trojkatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.prostokatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.koloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-            this.ukryjToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
+            this.pokazSiatke = new System.Windows.Forms.Button();
+            this.ukryjSiatke = new System.Windows.Forms.Button();
+            this.rysKwadrat = new System.Windows.Forms.Button();
+            this.rysProstokat = new System.Windows.Forms.Button();
+            this.rysTrojkat = new System.Windows.Forms.Button();
+            this.rysOkrag = new System.Windows.Forms.Button();
+            this.wyczysc = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // pokazSiatke
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.siatkaToolStripMenuItem,
-            this.rysujToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(984, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            this.pokazSiatke.Location = new System.Drawing.Point(10, 16);
+            this.pokazSiatke.Name = "pokazSiatke";
+            this.pokazSiatke.Size = new System.Drawing.Size(117, 26);
+            this.pokazSiatke.TabIndex = 0;
+            this.pokazSiatke.Text = "Pokaż siatkę";
+            this.pokazSiatke.UseVisualStyleBackColor = true;
+            this.pokazSiatke.Click += new System.EventHandler(this.pokazSiatke_Click);
             // 
-            // siatkaToolStripMenuItem
+            // ukryjSiatke
             // 
-            this.siatkaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pokazToolStripMenuItem,
-            this.ukryjToolStripMenuItem});
-            this.siatkaToolStripMenuItem.Name = "siatkaToolStripMenuItem";
-            this.siatkaToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
-            this.siatkaToolStripMenuItem.Text = "Siatka";
+            this.ukryjSiatke.Location = new System.Drawing.Point(142, 16);
+            this.ukryjSiatke.Name = "ukryjSiatke";
+            this.ukryjSiatke.Size = new System.Drawing.Size(72, 25);
+            this.ukryjSiatke.TabIndex = 1;
+            this.ukryjSiatke.Text = "Ukryj";
+            this.ukryjSiatke.UseVisualStyleBackColor = true;
+            this.ukryjSiatke.Click += new System.EventHandler(this.ukryjSiatke_Click);
             // 
-            // pokazToolStripMenuItem
+            // rysKwadrat
             // 
-            this.pokazToolStripMenuItem.Name = "pokazToolStripMenuItem";
-            this.pokazToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.pokazToolStripMenuItem.Text = "Pokaż";
-            this.pokazToolStripMenuItem.Click += new System.EventHandler(this.pokazToolStripMenuItem_Click);
+            this.rysKwadrat.Location = new System.Drawing.Point(10, 78);
+            this.rysKwadrat.Name = "rysKwadrat";
+            this.rysKwadrat.Size = new System.Drawing.Size(117, 26);
+            this.rysKwadrat.TabIndex = 2;
+            this.rysKwadrat.Text = "Kwadrat";
+            this.rysKwadrat.UseVisualStyleBackColor = true;
+            this.rysKwadrat.Click += new System.EventHandler(this.rysKwadrat_Click);
             // 
-            // ukryjToolStripMenuItem
+            // rysProstokat
             // 
-            this.ukryjToolStripMenuItem.Name = "ukryjToolStripMenuItem";
-            this.ukryjToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.ukryjToolStripMenuItem.Text = "Ukryj";
-            this.ukryjToolStripMenuItem.Click += new System.EventHandler(this.ukryjToolStripMenuItem_Click);
+            this.rysProstokat.Location = new System.Drawing.Point(10, 110);
+            this.rysProstokat.Name = "rysProstokat";
+            this.rysProstokat.Size = new System.Drawing.Size(117, 26);
+            this.rysProstokat.TabIndex = 3;
+            this.rysProstokat.Text = "Prostokąt";
+            this.rysProstokat.UseVisualStyleBackColor = true;
+            this.rysProstokat.Click += new System.EventHandler(this.rysProstokat_Click);
             // 
-            // rysujToolStripMenuItem
+            // rysTrojkat
             // 
-            this.rysujToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.kwadratToolStripMenuItem,
-            this.trojkatToolStripMenuItem,
-            this.prostokatToolStripMenuItem,
-            this.koloToolStripMenuItem,
-            this.toolStripMenuItem1,
-            this.ukryjToolStripMenuItem1});
-            this.rysujToolStripMenuItem.Name = "rysujToolStripMenuItem";
-            this.rysujToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
-            this.rysujToolStripMenuItem.Text = "Rysuj";
+            this.rysTrojkat.Location = new System.Drawing.Point(10, 142);
+            this.rysTrojkat.Name = "rysTrojkat";
+            this.rysTrojkat.Size = new System.Drawing.Size(117, 26);
+            this.rysTrojkat.TabIndex = 4;
+            this.rysTrojkat.Text = "Trójkąt";
+            this.rysTrojkat.UseVisualStyleBackColor = true;
+            this.rysTrojkat.Click += new System.EventHandler(this.rysTrojkat_Click);
             // 
-            // kwadratToolStripMenuItem
+            // rysOkrag
             // 
-            this.kwadratToolStripMenuItem.Name = "kwadratToolStripMenuItem";
-            this.kwadratToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.kwadratToolStripMenuItem.Text = "Kwadrat";
-            this.kwadratToolStripMenuItem.Click += new System.EventHandler(this.kwadratToolStripMenuItem_Click);
+            this.rysOkrag.Location = new System.Drawing.Point(10, 174);
+            this.rysOkrag.Name = "rysOkrag";
+            this.rysOkrag.Size = new System.Drawing.Size(117, 26);
+            this.rysOkrag.TabIndex = 5;
+            this.rysOkrag.Text = "Okrąg";
+            this.rysOkrag.UseVisualStyleBackColor = true;
+            this.rysOkrag.Click += new System.EventHandler(this.rysOkrag_Click);
             // 
-            // trojkatToolStripMenuItem
+            // wyczysc
             // 
-            this.trojkatToolStripMenuItem.Name = "trojkatToolStripMenuItem";
-            this.trojkatToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.trojkatToolStripMenuItem.Text = "Trójkąt";
-            this.trojkatToolStripMenuItem.Click += new System.EventHandler(this.trojkatToolStripMenuItem_Click);
-            // 
-            // prostokatToolStripMenuItem
-            // 
-            this.prostokatToolStripMenuItem.Name = "prostokatToolStripMenuItem";
-            this.prostokatToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.prostokatToolStripMenuItem.Text = "Prostokąt";
-            this.prostokatToolStripMenuItem.Click += new System.EventHandler(this.prostokatToolStripMenuItem_Click);
-            // 
-            // koloToolStripMenuItem
-            // 
-            this.koloToolStripMenuItem.Name = "koloToolStripMenuItem";
-            this.koloToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.koloToolStripMenuItem.Text = "Koło";
-            this.koloToolStripMenuItem.Click += new System.EventHandler(this.koloToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
-            // 
-            // ukryjToolStripMenuItem1
-            // 
-            this.ukryjToolStripMenuItem1.Name = "ukryjToolStripMenuItem1";
-            this.ukryjToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.ukryjToolStripMenuItem1.Text = "Ukryj";
-            this.ukryjToolStripMenuItem1.Click += new System.EventHandler(this.ukryjToolStripMenuItem1_Click);
+            this.wyczysc.Location = new System.Drawing.Point(142, 78);
+            this.wyczysc.Name = "wyczysc";
+            this.wyczysc.Size = new System.Drawing.Size(72, 25);
+            this.wyczysc.TabIndex = 6;
+            this.wyczysc.Text = "Wyczyść";
+            this.wyczysc.UseVisualStyleBackColor = true;
+            this.wyczysc.Click += new System.EventHandler(this.wyczysc_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(984, 861);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
+            this.ClientSize = new System.Drawing.Size(1184, 861);
+            this.Controls.Add(this.wyczysc);
+            this.Controls.Add(this.rysOkrag);
+            this.Controls.Add(this.rysTrojkat);
+            this.Controls.Add(this.rysProstokat);
+            this.Controls.Add(this.rysKwadrat);
+            this.Controls.Add(this.ukryjSiatke);
+            this.Controls.Add(this.pokazSiatke);
             this.Name = "Form1";
             this.Text = "Figury geometryczne";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem siatkaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem pokazToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ukryjToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem rysujToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem kwadratToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem trojkatToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem prostokatToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem koloToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem ukryjToolStripMenuItem1;
+        private System.Windows.Forms.Button pokazSiatke;
+        private System.Windows.Forms.Button ukryjSiatke;
+        private System.Windows.Forms.Button rysKwadrat;
+        private System.Windows.Forms.Button rysProstokat;
+        private System.Windows.Forms.Button rysTrojkat;
+        private System.Windows.Forms.Button rysOkrag;
+        private System.Windows.Forms.Button wyczysc;
     }
 }
 

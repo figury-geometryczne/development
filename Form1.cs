@@ -26,7 +26,7 @@ namespace figuryGeometryczne
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            var srodek = new Punkt(ClientSize.Width / 2, (ClientSize.Height + menuStrip1.Height) / 2, Color.Red, this);      // okresla srodek form1
+            var srodek = new Punkt((ClientSize.Width + 200)/ 2, ClientSize.Height / 2, Color.Red, this);      // okresla srodek form1
             for (int i=0; i<10; i++ )
             {
                 figura[i] = srodek;
@@ -42,19 +42,19 @@ namespace figuryGeometryczne
             }
             siatka.Pokaż(e.Graphics);
         }
-        private void pokazToolStripMenuItem_Click(object sender, EventArgs e)
+        private void pokazSiatke_Click(object sender, EventArgs e)
         {
             siatka = new Uklad(siatka.X, siatka.Y, Color.Black, this);
             Invalidate();
         }
 
-        private void ukryjToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ukryjSiatke_Click(object sender, EventArgs e)
         {
             siatka = new Punkt(siatka.X, siatka.Y, Color.White, this);
             Invalidate();
         }
 
-        private void kwadratToolStripMenuItem_Click(object sender, EventArgs e)
+        private void rysKwadrat_Click(object sender, EventArgs e)
         {
 
             figura[kol] = new Kwadrat(figura[kol].X, figura[kol].Y, Color.Green, this);
@@ -62,32 +62,36 @@ namespace figuryGeometryczne
             Invalidate();
         }
 
-        private void ukryjToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void wyczysc_Click(object sender, EventArgs e)
         {
-            figura[kol] = new Kwadrat(figura[kol].X, figura[kol].Y, Color.White, this);
-            kol--;
-            Invalidate();
+            for (int i = 0; i < kol; i++)
+            {
+                figura[i] = new Kwadrat(figura[i].X, figura[i].Y, Color.White, this);
+                Invalidate();
+            }
+            kol = 0;
         }
 
-        private void trojkatToolStripMenuItem_Click(object sender, EventArgs e)
+        private void rysTrojkat_Click(object sender, EventArgs e)
         {
             figura[kol] = new Trojkat(figura[kol].X, figura[kol].Y, Color.Green, this);
             kol++;
             Invalidate();
         }
 
-        private void prostokatToolStripMenuItem_Click(object sender, EventArgs e)
+        private void rysProstokat_Click(object sender, EventArgs e)
         {
             figura[kol] = new Prostokat(figura[kol].X, figura[kol].Y, Color.Green, this);
             kol++;
             Invalidate();
         }
 
-        private void koloToolStripMenuItem_Click(object sender, EventArgs e)
+        private void rysOkrag_Click(object sender, EventArgs e)
         {
             figura[kol] = new Okrag(figura[kol].X, figura[kol].Y, 100, Color.Green, this);
             kol++;
             Invalidate();
         }
+
     }
 }
