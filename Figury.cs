@@ -87,4 +87,27 @@ namespace Figury
         }
     }
 
+    class Rysunek : Punkt
+    {
+        protected int xx1, xx2, xx3, yy1,yy2,yy3;
+        public Rysunek(int xUkl, int yUkl, int x1Fig, int y1Fig, int x2Fig, int y2Fig, int x3Fig, int y3Fig, Color kol, Form form) : base(xUkl, yUkl, kol, form)
+        {
+            xx1 = x1Fig;
+            xx2 = x2Fig;
+            xx3 = x3Fig;
+            yy1 = y1Fig*(-1);
+            yy2 = y2Fig*(-1);
+            yy3 = y3Fig*(-1);
+        }
+        protected override void Rysuj(Graphics g)
+        {
+            using (Pen pen = new Pen(kolor, 3))
+            {
+                g.DrawLine(pen, x + xx1 * 10, y + yy1 * 10, x + xx2 * 10, y + yy2 * 10);
+                g.DrawLine(pen, x + xx1 * 10, y + yy1 * 10, x + xx3 * 10, y + yy3 * 10);
+                g.DrawLine(pen, x + xx3 * 10, y + yy3 * 10, x + xx2 * 10, y + yy2 * 10);
+            }
+
+        }
+    }
 }

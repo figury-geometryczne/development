@@ -13,9 +13,9 @@ using Figury;
 
 namespace figuryGeometryczne
 {
-    public partial class Form1 : Form
+    public partial class y1 : Form
     {
-        public Form1()
+        public y1()
         {
             InitializeComponent();
         }
@@ -93,5 +93,89 @@ namespace figuryGeometryczne
             Invalidate();
         }
 
+        private void rysujWspol_Click(object sender, EventArgs e)
+        {
+            int temp = 0;
+
+                if (String.IsNullOrEmpty(rys_x1.Text) || String.IsNullOrEmpty(rys_y1.Text))
+            {
+                temp = 1;
+            }
+
+                
+                if (String.IsNullOrEmpty(rys_x2.Text) || String.IsNullOrEmpty(rys_y2.Text))
+                {
+                if (temp == 0)
+                {
+                    temp = 2;
+                }
+                else
+                {
+                    MessageBox.Show("Potrzeba co najmniej trzech wartosci");
+                }
+                }
+
+            if (String.IsNullOrEmpty(rys_x3.Text) || String.IsNullOrEmpty(rys_y3.Text))
+            {
+                if (temp == 0)
+                {
+                    temp = 3;
+                }
+                else
+                {
+                    MessageBox.Show("Potrzeba co najmniej trzech wartosci");
+                }
+            }
+
+            if (String.IsNullOrEmpty(rys_x4.Text) || String.IsNullOrEmpty(rys_y4.Text))
+            {
+                if (temp == 0)
+                {
+                    temp = 4;
+                }
+                else
+                {
+                    MessageBox.Show("Potrzeba co najmniej trzech wartosci");
+                }
+            }
+
+            int rysx1, rysx2, rysx3, rysx4, rysy1, rysy2, rysy3, rysy4;
+
+            rysx1 = int.Parse(rys_x1.Text);
+            rysy1 = int.Parse(rys_y1.Text);
+            rysx2 = int.Parse(rys_x2.Text);
+            rysy2 = int.Parse(rys_y2.Text);
+            rysx3 = int.Parse(rys_x3.Text);          
+            rysy3 = int.Parse(rys_y3.Text);
+
+     /*       if (temp==1)
+            {
+                figura[kol] = new Rysunek(figura[kol].X, figura[kol].Y, rysx2, rysy2, rysx3, rysy3, rysx4, rysy4, Color.Purple, this);
+                kol++;
+                Invalidate();
+            }
+
+            if (temp == 2)
+            {
+                figura[kol] = new Rysunek(figura[kol].X, figura[kol].Y, rysx1, rysy1, rysx3, rysy3, rysx4, rysy4, Color.Purple, this);
+                kol++;
+                Invalidate();
+            }
+
+            if (temp == 3)
+            {
+                figura[kol] = new Rysunek(figura[kol].X, figura[kol].Y, rysx1, rysy1, rysx2, rysy2, rysx4, rysy4, Color.Purple, this);
+                kol++;
+                Invalidate();
+            }
+            */
+            if (temp == 4)
+            {
+                figura[kol] = new Rysunek(figura[kol].X, figura[kol].Y, rysx1, rysy1, rysx2, rysy2, rysx3, rysy3, Color.Purple, this);
+                kol++;
+                MessageBox.Show(rysx1.ToString());
+                Invalidate();
+            }
+        }
     }
 }
