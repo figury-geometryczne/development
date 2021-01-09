@@ -1,0 +1,22 @@
+1. Siatka układu współrzędnych
+Po naciśnięciu "Pokaż siatkę" zostanie narysowany układ współrzędnych.
+Żeby ukryć należy wcisnać "Ukryj".
+
+2. Rysowanie podstawowych figur
+Żeby narysować podstawowe figury należy nacisnąć przycisk jednej z dostępnych figur ("Kwadrat", "Prostokąt", "Trójkąt", "Okrąg").
+Żeby usunąc wciśnij "Wyczyść".
+
+3. Rysowanie figur z współrzędnych
+Żeby narysować Prostokąt należy wypełnić współrzędne czterech wierzchołków x i y, a następnie wcisnąć "Kwadrat/Trójkąt".
+Żeby narysować Trójkąt należy wypełnić współrzędne trzech wierzchołków x i y, a następnie wcisnąć "kwadrat/Trójkąt".
+Żeby narysować Okrąg należy podać jedno współrzędne x i y środka okrągu i podać długość promienia - r, a następnie wcisnąć "Okrąg".
+
+4. Obliczanie pola powierzchni i obwodu
+Pole i obwód zostanie automatycznie obliczone po narysowaniu figury z współrzędnych.
+
+5. Kolor
+Z pola wyboru "Kolor" należy wybrać odpowiedni kolor.
+
+6. Przesuwanie figur
+Wybierz i za pomocą strzałek przesuń figurę.
+
