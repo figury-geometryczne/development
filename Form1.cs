@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using Punkty;
 using Uklady;
 using Figury;
+using System.Data.SqlClient;
+
 
 namespace figuryGeometryczne
 {
@@ -19,9 +21,10 @@ namespace figuryGeometryczne
         {
             InitializeComponent();
         }
+
         private Punkt[] figura = new Punkt[10];
         private Punkt siatka;
-        public int kol = 0;
+        public int kol = 00;
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -151,6 +154,11 @@ namespace figuryGeometryczne
                 rysy2 = int.Parse(rys_y2.Text);
                 rysx3 = int.Parse(rys_x3.Text);
                 rysy3 = int.Parse(rys_y3.Text);
+                int a, b;
+                a = rysy1 - rysy2;
+                b = rysx1 - rysx3;
+                writeResult(a*b);
+                writeResult2((2*a)+(2*b));
                 figura[kol] = new RysunekKw(figura[kol].X, figura[kol].Y, rysx1, rysy1, rysx2, rysy2, rysx3, rysy3, rysx4, rysy4, Color.Purple, this);
                 kol++;
                 Invalidate();
@@ -203,6 +211,13 @@ namespace figuryGeometryczne
                 rysy2 = int.Parse(rys_y2.Text);
                 rysx3 = int.Parse(rys_x3.Text);
                 rysy3 = int.Parse(rys_y3.Text);
+                double a, b, c, h;
+                h = (rysy2 - rysy1);
+                a = Math.Sqrt((rysx2 - rysx1) * (rysx2 - rysx1) + (rysy2 - rysy1) * (rysy2 - rysy1));
+                b = Math.Sqrt((rysx3 - rysx1) * (rysx3 - rysx1) + (rysy3 - rysy1) * (rysy3 - rysy1));
+                c = Math.Sqrt((rysx2 - rysx3) * (rysx2 - rysx3) + (rysy2 - rysy3) * (rysy2 - rysy3));
+                writeResult((c * h) / 2);
+                writeResult2(a + b + c);
                 figura[kol] = new Rysunek(figura[kol].X, figura[kol].Y, rysx1, rysy1, rysx2, rysy2, rysx3, rysy3, Color.Purple, this);
                 kol++;
                 Invalidate();
@@ -217,6 +232,32 @@ namespace figuryGeometryczne
             figura[kol] = new RysujOkr(figura[kol].X, figura[kol].Y, rysx1, rysy1, rysr, Color.Green, this);
             kol++;
             Invalidate();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            TextBox textbox = sender as TextBox;
+            if (textbox.Text == "") textbox.Text = "0";
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void obwod_TextChanged(object sender, EventArgs e)
+        {
+            TextBox textbox = sender as TextBox;
+            if (textbox.Text == "") textbox.Text = "0";
+        }
+
+        private void writeResult(double v)
+        {
+            polePow.Text = v.ToString();
+        }
+        private void writeResult2(double v)
+        {
+            obwod.Text = v.ToString();
         }
 
     }

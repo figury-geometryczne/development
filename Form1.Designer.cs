@@ -57,7 +57,10 @@
             this.rysOkrWspl = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.polePow = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.obwod = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // pokazSiatke
@@ -312,20 +315,42 @@
             this.label11.TabIndex = 31;
             this.label11.Text = "Rysuj figury podstawowe";
             // 
-            // comboBox1
+            // polePow
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Blue",
-            "Black",
-            "Red",
-            "Yellow",
-            "Orange",
-            "Green"});
-            this.comboBox1.Location = new System.Drawing.Point(10, 432);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(106, 21);
-            this.comboBox1.TabIndex = 32;
+            this.polePow.Location = new System.Drawing.Point(135, 419);
+            this.polePow.Name = "polePow";
+            this.polePow.ReadOnly = true;
+            this.polePow.Size = new System.Drawing.Size(117, 20);
+            this.polePow.TabIndex = 32;
+            this.polePow.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(9, 426);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(87, 13);
+            this.label12.TabIndex = 33;
+            this.label12.Text = "Pole powierzchni";
+            this.label12.Click += new System.EventHandler(this.label12_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(9, 452);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(41, 13);
+            this.label13.TabIndex = 34;
+            this.label13.Text = "Obwód";
+            // 
+            // obwod
+            // 
+            this.obwod.Location = new System.Drawing.Point(135, 445);
+            this.obwod.Name = "obwod";
+            this.obwod.ReadOnly = true;
+            this.obwod.Size = new System.Drawing.Size(117, 20);
+            this.obwod.TabIndex = 35;
+            this.obwod.TextChanged += new System.EventHandler(this.obwod_TextChanged);
             // 
             // y1
             // 
@@ -333,7 +358,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1184, 861);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.obwod);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.polePow);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.rysOkrWspl);
@@ -403,7 +431,10 @@
         private System.Windows.Forms.Button rysOkrWspl;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox polePow;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox obwod;
     }
 }
 
