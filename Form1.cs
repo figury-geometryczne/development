@@ -23,13 +23,13 @@ namespace figuryGeometryczne
 
         private Punkt[] figura = new Punkt[10];
         private Punkt siatka;
-        public int kol=0;
-        
+        public int kol = 0;
+
         // tworzenie miejsca na rysowanie
         private void Form1_Load(object sender, EventArgs e)
         {
-            var srodek = new Punkt((ClientSize.Width + 200)/ 2, ClientSize.Height / 2, Color.Red, this);      // okresla srodek form1
-            for (int i=0; i<10; i++ )
+            var srodek = new Punkt((ClientSize.Width + 200) / 2, ClientSize.Height / 2, Color.Red, this);      // okresla srodek form1
+            for (int i = 0; i < 10; i++)
             {
                 figura[i] = srodek;
             }
@@ -91,77 +91,29 @@ namespace figuryGeometryczne
         }
 
         // RYSOWANIE Z WSPÓŁRZĘDNYCH
-
         private void rysujWspol_Click(object sender, EventArgs e)
         {
-            int temp = 0;
-
-                if (String.IsNullOrEmpty(rys_x1.Text) || String.IsNullOrEmpty(rys_y1.Text))
+            int rysx1, rysx2, rysx3, rysx4, rysy1, rysy2, rysy3, rysy4, rysr;
+            if (String.IsNullOrEmpty(rys_x1.Text) && String.IsNullOrEmpty(rys_y1.Text) && String.IsNullOrEmpty(rys_x2.Text) && String.IsNullOrEmpty(rys_y2.Text) && String.IsNullOrEmpty(rys_x3.Text) && String.IsNullOrEmpty(rys_y3.Text) && String.IsNullOrEmpty(rys_x4.Text) && String.IsNullOrEmpty(rys_y4.Text))
             {
-                temp = 1;
+                MessageBox.Show("Brak poprawnych wartości. Wprowadź wartości lub sprawdź plik pomocy.");
             }
-
-                
-                if (String.IsNullOrEmpty(rys_x2.Text) || String.IsNullOrEmpty(rys_y2.Text))
+            else if ((String.IsNullOrEmpty(rys_x2.Text) && String.IsNullOrEmpty(rys_y2.Text)) && (String.IsNullOrEmpty(rys_x3.Text) && String.IsNullOrEmpty(rys_y3.Text)) && (String.IsNullOrEmpty(rys_x4.Text) && String.IsNullOrEmpty(rys_y4.Text)))
+            {
+                if (String.IsNullOrEmpty(rys_x1.Text) || String.IsNullOrEmpty(rys_y1.Text) || String.IsNullOrEmpty(rys_r.Text))
                 {
-                if (temp == 0)
-                {
-                    temp = 2;
+                    MessageBox.Show("Brak poprawnych wartości. Wprowadź wartości lub sprawdź plik pomocy.");
                 }
                 else
                 {
-                    MessageBox.Show("Potrzeba co najmniej trzech wartosci");
-                }
-                }
-
-            if (String.IsNullOrEmpty(rys_x3.Text) || String.IsNullOrEmpty(rys_y3.Text))
-            {
-                if (temp == 0)
-                {
-                    temp = 3;
-                }
-                else
-                {
-                    MessageBox.Show("Potrzeba co najmniej trzech wartosci");
+                    rysr = int.Parse(rys_r.Text);
+                    rysx1 = int.Parse(rys_x1.Text);
+                    rysy1 = int.Parse(rys_y1.Text);
+                    figura[kol] = new RysujOkr(figura[kol].X, figura[kol].Y, rysx1, rysy1, rysr, Color.Green, this);
+                    Invalidate();
                 }
             }
-
-            if (String.IsNullOrEmpty(rys_x4.Text) || String.IsNullOrEmpty(rys_y4.Text))
-            {
-                if (temp == 0)
-                {
-                    temp = 4;
-                }
-                else
-                {
-                    MessageBox.Show("Potrzeba co najmniej trzech wartosci");
-                }
-            }
-
-            int rysx1, rysx2, rysx3, rysx4, rysy1, rysy2, rysy3, rysy4;
-
-
-            if (temp == 0)
-            {
-                rysx1 = int.Parse(rys_x1.Text);
-                rysy1 = int.Parse(rys_y1.Text);
-                rysx4 = int.Parse(rys_x4.Text);
-                rysy4 = int.Parse(rys_y4.Text);
-                rysx2 = int.Parse(rys_x2.Text);
-                rysy2 = int.Parse(rys_y2.Text);
-                rysx3 = int.Parse(rys_x3.Text);
-                rysy3 = int.Parse(rys_y3.Text);
-                int a, b;
-                a = rysy1 - rysy2;
-                b = rysx1 - rysx3;
-                writeResult(a*b);
-                writeResult2((2*a)+(2*b));
-                figura[kol] = new RysunekKw(figura[kol].X, figura[kol].Y, rysx1, rysy1, rysx2, rysy2, rysx3, rysy3, rysx4, rysy4, Color.Purple, this);
-                kol++;
-                Invalidate();
-            }
-
-            if (temp==1)
+            else if ((String.IsNullOrEmpty(rys_x1.Text) || String.IsNullOrEmpty(rys_y1.Text)) && String.IsNullOrEmpty(rys_r.Text))
             {
                 rysx4 = int.Parse(rys_x4.Text);
                 rysy4 = int.Parse(rys_y4.Text);
@@ -170,11 +122,9 @@ namespace figuryGeometryczne
                 rysx3 = int.Parse(rys_x3.Text);
                 rysy3 = int.Parse(rys_y3.Text);
                 figura[kol] = new Rysunek(figura[kol].X, figura[kol].Y, rysx2, rysy2, rysx3, rysy3, rysx4, rysy4, Color.Purple, this);
-                kol++;
                 Invalidate();
             }
-
-            if (temp == 2)
+            else if ((String.IsNullOrEmpty(rys_x2.Text) || String.IsNullOrEmpty(rys_y2.Text)) && String.IsNullOrEmpty(rys_r.Text))
             {
                 rysx1 = int.Parse(rys_x1.Text);
                 rysy1 = int.Parse(rys_y1.Text);
@@ -183,11 +133,9 @@ namespace figuryGeometryczne
                 rysx3 = int.Parse(rys_x3.Text);
                 rysy3 = int.Parse(rys_y3.Text);
                 figura[kol] = new Rysunek(figura[kol].X, figura[kol].Y, rysx1, rysy1, rysx3, rysy3, rysx4, rysy4, Color.Purple, this);
-                kol++;
                 Invalidate();
             }
-
-            if (temp == 3)
+            else if ((String.IsNullOrEmpty(rys_x3.Text) || String.IsNullOrEmpty(rys_y3.Text)) && String.IsNullOrEmpty(rys_r.Text))
             {
                 rysx1 = int.Parse(rys_x1.Text);
                 rysy1 = int.Parse(rys_y1.Text);
@@ -196,11 +144,9 @@ namespace figuryGeometryczne
                 rysx4 = int.Parse(rys_x4.Text);
                 rysy4 = int.Parse(rys_y4.Text);
                 figura[kol] = new Rysunek(figura[kol].X, figura[kol].Y, rysx1, rysy1, rysx2, rysy2, rysx4, rysy4, Color.Purple, this);
-                kol++;
                 Invalidate();
             }
-            
-            if (temp == 4)
+            else if ((String.IsNullOrEmpty(rys_x4.Text) || String.IsNullOrEmpty(rys_y4.Text)) && String.IsNullOrEmpty(rys_r.Text))
             {
                 rysx1 = int.Parse(rys_x1.Text);
                 rysy1 = int.Parse(rys_y1.Text);
@@ -216,21 +162,79 @@ namespace figuryGeometryczne
                 writeResult((c * h) / 2);
                 writeResult2(a + b + c);
                 figura[kol] = new Rysunek(figura[kol].X, figura[kol].Y, rysx1, rysy1, rysx2, rysy2, rysx3, rysy3, Color.Purple, this);
-                kol++;
                 Invalidate();
+            }
+            else if (String.IsNullOrEmpty(rys_r.Text))
+            {
+                rysx1 = int.Parse(rys_x1.Text);
+                rysy1 = int.Parse(rys_y1.Text);
+                rysx4 = int.Parse(rys_x4.Text);
+                rysy4 = int.Parse(rys_y4.Text);
+                rysx2 = int.Parse(rys_x2.Text);
+                rysy2 = int.Parse(rys_y2.Text);
+                rysx3 = int.Parse(rys_x3.Text);
+                rysy3 = int.Parse(rys_y3.Text);
+                int a, b;
+                if (rysx1 == rysx2)
+                {
+                    if (rysx1 < rysx3)
+                    {
+                        b = rysx3 - rysx1;
+                    }
+                    else
+                    {
+                        b = rysx1 - rysx3;
+                    }
+                }
+                else if (rysx1 < rysx2)
+                {
+                    b = rysx2 - rysx1;
+                }
+                else
+                {
+                    b = rysx1 - rysx2;
+                }
+
+                if (rysy1 == rysy2)
+                {
+                    if (rysy1 < rysy3)
+                    {
+                        a = rysy3 - rysy1;
+                    }
+                    else
+                    {
+                        a = rysy1 - rysy3;
+                    }
+                }
+                else if (rysy1 < rysy2)
+                {
+                    a = rysy2 - rysy1;
+                }
+                else
+                {
+                    a = rysy1 - rysy2;
+                }
+
+                writeResult(a * b);
+                writeResult2((2 * a) + (2 * b));
+                figura[kol] = new RysunekKw(figura[kol].X, figura[kol].Y, rysx1, rysy1, rysx2, rysy2, rysx3, rysy3, rysx4, rysy4, Color.Purple, this);
+                Invalidate();
+            }
+            else
+            {
+                MessageBox.Show("Brak poprawnych wartości. Wprowadź wartości lub sprawdź plik pomocy.");
             }
         }
 
-        private void rysOkrWspl_Click(object sender, EventArgs e)
+        // WYŚWIETLANIE POLA I OBWODU
+        private void writeResult(double v)
         {
-            int rysr = int.Parse(rys_r.Text);
-            int rysx1 = int.Parse(rys_x1.Text);
-            int rysy1 = int.Parse(rys_y1.Text);
-            figura[kol] = new RysujOkr(figura[kol].X, figura[kol].Y, rysx1, rysy1, rysr, Color.Green, this);
-            kol++;
-            Invalidate();
+            polePow.Text = v.ToString();
         }
-
+        private void writeResult2(double v)
+        {
+            obwod.Text = v.ToString();
+        }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             TextBox textbox = sender as TextBox;
@@ -243,18 +247,151 @@ namespace figuryGeometryczne
             if (textbox.Text == "") textbox.Text = "0";
         }
 
-        private void writeResult(double v)
-        {
-            polePow.Text = v.ToString();
-        }
-        private void writeResult2(double v)
-        {
-            obwod.Text = v.ToString();
-        }
-
+        // WYBÓR FIGURY
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             kol = int.Parse(comboBox1.Text) - 1;
+        }
+
+        // PRZESUWANIE FIGUR
+        private void onLeft_Click(object sender, EventArgs e)
+        {
+            int temp;
+            if (String.IsNullOrEmpty(rys_x1.Text) && String.IsNullOrEmpty(rys_x2.Text) && String.IsNullOrEmpty(rys_x3.Text) && String.IsNullOrEmpty(rys_x4.Text))
+                MessageBox.Show("Żaden x nie jest podany.");
+            else
+            {
+                if (String.IsNullOrEmpty(rys_x1.Text)){}
+                else
+                {
+                    temp = int.Parse(rys_x1.Text) - 1;
+                    rys_x1.Text = temp.ToString();
+                }
+                if (String.IsNullOrEmpty(rys_x2.Text)) { }
+                else
+                {
+                    temp = int.Parse(rys_x2.Text) - 1;
+                    rys_x2.Text = temp.ToString();
+                }
+                if (String.IsNullOrEmpty(rys_x3.Text)) { }
+                else
+                {
+                    temp = int.Parse(rys_x3.Text) - 1;
+                    rys_x3.Text = temp.ToString();
+                }
+                if (String.IsNullOrEmpty(rys_x4.Text)) { }
+                else
+                {
+                    temp = int.Parse(rys_x4.Text) - 1;
+                    rys_x4.Text = temp.ToString();
+                }
+                rysujWspol_Click(sender, e);
+            }
+        }
+
+        private void onRight_Click(object sender, EventArgs e)
+        {
+            int temp;
+            if (String.IsNullOrEmpty(rys_x1.Text) && String.IsNullOrEmpty(rys_x2.Text) && String.IsNullOrEmpty(rys_x3.Text) && String.IsNullOrEmpty(rys_x4.Text))
+                MessageBox.Show("Żaden x nie jest podany.");
+            else
+            {
+                if (String.IsNullOrEmpty(rys_x1.Text)) { }
+                else
+                {
+                    temp = int.Parse(rys_x1.Text) + 1;
+                    rys_x1.Text = temp.ToString();
+                }
+                if (String.IsNullOrEmpty(rys_x2.Text)) { }
+                else
+                {
+                    temp = int.Parse(rys_x2.Text) + 1;
+                    rys_x2.Text = temp.ToString();
+                }
+                if (String.IsNullOrEmpty(rys_x3.Text)) { }
+                else
+                {
+                    temp = int.Parse(rys_x3.Text) + 1;
+                    rys_x3.Text = temp.ToString();
+                }
+                if (String.IsNullOrEmpty(rys_x4.Text)) { }
+                else
+                {
+                    temp = int.Parse(rys_x4.Text) + 1;
+                    rys_x4.Text = temp.ToString();
+                }
+                rysujWspol_Click(sender, e);
+            }
+        }
+
+        private void onUp_Click(object sender, EventArgs e)
+        {
+            int temp;
+            if (String.IsNullOrEmpty(rys_y1.Text) && String.IsNullOrEmpty(rys_y2.Text) && String.IsNullOrEmpty(rys_y3.Text) && String.IsNullOrEmpty(rys_y4.Text))
+                MessageBox.Show("Żaden y nie jest podany.");
+            else
+            {
+                if (String.IsNullOrEmpty(rys_y1.Text)) { }
+                else
+                {
+                    temp = int.Parse(rys_y1.Text) + 1;
+                    rys_y1.Text = temp.ToString();
+                }
+                if (String.IsNullOrEmpty(rys_y2.Text)) { }
+                else
+                {
+                    temp = int.Parse(rys_y2.Text) + 1;
+                    rys_y2.Text = temp.ToString();
+                }
+                if (String.IsNullOrEmpty(rys_y3.Text)) { }
+                else
+                {
+                    temp = int.Parse(rys_y3.Text) + 1;
+                    rys_y3.Text = temp.ToString();
+                }
+                if (String.IsNullOrEmpty(rys_y4.Text)) { }
+                else
+                {
+                    temp = int.Parse(rys_y4.Text) + 1;
+                    rys_y4.Text = temp.ToString();
+                }
+                rysujWspol_Click(sender, e);
+            }
+        }
+
+        private void onDown_Click(object sender, EventArgs e)
+        {
+            int temp;
+            if (String.IsNullOrEmpty(rys_y1.Text) && String.IsNullOrEmpty(rys_y2.Text) && String.IsNullOrEmpty(rys_y3.Text) && String.IsNullOrEmpty(rys_y4.Text))
+                MessageBox.Show("Żaden y nie jest podany.");
+            else
+            {
+                if (String.IsNullOrEmpty(rys_y1.Text)) { }
+                else
+                {
+                    temp = int.Parse(rys_y1.Text) - 1;
+                    rys_y1.Text = temp.ToString();
+                }
+                if (String.IsNullOrEmpty(rys_y2.Text)) { }
+                else
+                {
+                    temp = int.Parse(rys_y2.Text) - 1;
+                    rys_y2.Text = temp.ToString();
+                }
+                if (String.IsNullOrEmpty(rys_y3.Text)) { }
+                else
+                {
+                    temp = int.Parse(rys_y3.Text) - 1;
+                    rys_y3.Text = temp.ToString();
+                }
+                if (String.IsNullOrEmpty(rys_y4.Text)) { }
+                else
+                {
+                    temp = int.Parse(rys_y4.Text) - 1;
+                    rys_y4.Text = temp.ToString();
+                }
+                rysujWspol_Click(sender, e);
+            }
         }
     }
 }

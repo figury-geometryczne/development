@@ -54,7 +54,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.rys_r = new System.Windows.Forms.TextBox();
-            this.rysOkrWspl = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.polePow = new System.Windows.Forms.TextBox();
@@ -63,6 +62,10 @@
             this.obwod = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
+            this.onLeft = new System.Windows.Forms.Button();
+            this.onRight = new System.Windows.Forms.Button();
+            this.onUp = new System.Windows.Forms.Button();
+            this.onDown = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // pokazSiatke
@@ -169,7 +172,7 @@
             this.rysujWspol.Name = "rysujWspol";
             this.rysujWspol.Size = new System.Drawing.Size(117, 26);
             this.rysujWspol.TabIndex = 11;
-            this.rysujWspol.Text = "Kwadrat/Trójkąt";
+            this.rysujWspol.Text = "Rysuj figurę";
             this.rysujWspol.UseVisualStyleBackColor = true;
             this.rysujWspol.Click += new System.EventHandler(this.rysujWspol_Click);
             // 
@@ -289,16 +292,6 @@
             this.rys_r.Size = new System.Drawing.Size(95, 20);
             this.rys_r.TabIndex = 27;
             // 
-            // rysOkrWspl
-            // 
-            this.rysOkrWspl.Location = new System.Drawing.Point(135, 416);
-            this.rysOkrWspl.Name = "rysOkrWspl";
-            this.rysOkrWspl.Size = new System.Drawing.Size(117, 26);
-            this.rysOkrWspl.TabIndex = 29;
-            this.rysOkrWspl.Text = "Okrąg";
-            this.rysOkrWspl.UseVisualStyleBackColor = true;
-            this.rysOkrWspl.Click += new System.EventHandler(this.rysOkrWspl_Click);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -383,12 +376,56 @@
             this.label14.TabIndex = 37;
             this.label14.Text = "Wybierz figurę";
             // 
+            // onLeft
+            // 
+            this.onLeft.Location = new System.Drawing.Point(10, 522);
+            this.onLeft.Name = "onLeft";
+            this.onLeft.Size = new System.Drawing.Size(117, 26);
+            this.onLeft.TabIndex = 38;
+            this.onLeft.Text = "W lewo ( x - 1 )";
+            this.onLeft.UseVisualStyleBackColor = true;
+            this.onLeft.Click += new System.EventHandler(this.onLeft_Click);
+            // 
+            // onRight
+            // 
+            this.onRight.Location = new System.Drawing.Point(142, 522);
+            this.onRight.Name = "onRight";
+            this.onRight.Size = new System.Drawing.Size(117, 26);
+            this.onRight.TabIndex = 39;
+            this.onRight.Text = "W prawo ( x + 1 )";
+            this.onRight.UseVisualStyleBackColor = true;
+            this.onRight.Click += new System.EventHandler(this.onRight_Click);
+            // 
+            // onUp
+            // 
+            this.onUp.Location = new System.Drawing.Point(7, 564);
+            this.onUp.Name = "onUp";
+            this.onUp.Size = new System.Drawing.Size(117, 26);
+            this.onUp.TabIndex = 40;
+            this.onUp.Text = "W górę ( y +1 )";
+            this.onUp.UseVisualStyleBackColor = true;
+            this.onUp.Click += new System.EventHandler(this.onUp_Click);
+            // 
+            // onDown
+            // 
+            this.onDown.Location = new System.Drawing.Point(142, 564);
+            this.onDown.Name = "onDown";
+            this.onDown.Size = new System.Drawing.Size(117, 26);
+            this.onDown.TabIndex = 41;
+            this.onDown.Text = "W dół ( y - 1 )";
+            this.onDown.UseVisualStyleBackColor = true;
+            this.onDown.Click += new System.EventHandler(this.onDown_Click);
+            // 
             // y1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1184, 861);
+            this.Controls.Add(this.onDown);
+            this.Controls.Add(this.onUp);
+            this.Controls.Add(this.onRight);
+            this.Controls.Add(this.onLeft);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.obwod);
@@ -397,7 +434,6 @@
             this.Controls.Add(this.polePow);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.rysOkrWspl);
             this.Controls.Add(this.rys_r);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
@@ -461,7 +497,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox rys_r;
-        private System.Windows.Forms.Button rysOkrWspl;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox polePow;
@@ -470,6 +505,10 @@
         private System.Windows.Forms.TextBox obwod;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button onLeft;
+        private System.Windows.Forms.Button onRight;
+        private System.Windows.Forms.Button onUp;
+        private System.Windows.Forms.Button onDown;
     }
 }
 
