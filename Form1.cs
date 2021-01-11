@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Punkty;
-using Uklady;
 using Figury;
 using System.Data.SqlClient;
 
@@ -24,8 +23,9 @@ namespace figuryGeometryczne
 
         private Punkt[] figura = new Punkt[10];
         private Punkt siatka;
-        public int kol = 00;
-
+        public int kol=0;
+        
+        // tworzenie miejsca na rysowanie
         private void Form1_Load(object sender, EventArgs e)
         {
             var srodek = new Punkt((ClientSize.Width + 200)/ 2, ClientSize.Height / 2, Color.Red, this);      // okresla srodek form1
@@ -44,6 +44,8 @@ namespace figuryGeometryczne
             }
             siatka.Pokaż(e.Graphics);
         }
+
+        // SIATKA
         private void pokazSiatke_Click(object sender, EventArgs e)
         {
             siatka = new Uklad(siatka.X, siatka.Y, Color.Black, this);
@@ -56,44 +58,39 @@ namespace figuryGeometryczne
             Invalidate();
         }
 
+        //FIGURY PODSTAWOWE
         private void rysKwadrat_Click(object sender, EventArgs e)
         {
 
             figura[kol] = new Kwadrat(figura[kol].X, figura[kol].Y, Color.Green, this);
-            kol++;
             Invalidate();
-        }
-
-        private void wyczysc_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < kol; i++)
-            {
-                figura[i] = new Kwadrat(figura[i].X, figura[i].Y, Color.White, this);
-                Invalidate();
-            }
-            kol = 0;
         }
 
         private void rysTrojkat_Click(object sender, EventArgs e)
         {
             figura[kol] = new Trojkat(figura[kol].X, figura[kol].Y, Color.Green, this);
-            kol++;
             Invalidate();
         }
 
         private void rysProstokat_Click(object sender, EventArgs e)
         {
             figura[kol] = new Prostokat(figura[kol].X, figura[kol].Y, Color.Green, this);
-            kol++;
             Invalidate();
         }
 
         private void rysOkrag_Click(object sender, EventArgs e)
         {
             figura[kol] = new Okrag(figura[kol].X, figura[kol].Y, 100, Color.Green, this);
-            kol++;
             Invalidate();
         }
+
+        private void wyczysc_Click(object sender, EventArgs e)
+        {
+            figura[kol] = new Kwadrat(figura[kol].X, figura[kol].Y, Color.White, this);
+            Invalidate();
+        }
+
+        // RYSOWANIE Z WSPÓŁRZĘDNYCH
 
         private void rysujWspol_Click(object sender, EventArgs e)
         {
@@ -240,11 +237,6 @@ namespace figuryGeometryczne
             if (textbox.Text == "") textbox.Text = "0";
         }
 
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void obwod_TextChanged(object sender, EventArgs e)
         {
             TextBox textbox = sender as TextBox;
@@ -260,5 +252,9 @@ namespace figuryGeometryczne
             obwod.Text = v.ToString();
         }
 
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            kol = int.Parse(comboBox1.Text) - 1;
+        }
     }
 }

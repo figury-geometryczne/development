@@ -70,26 +70,5 @@ namespace Punkty
                 return y;
             }
         }
-
-        public Color Kolor      // Kolor punktu (właściwość)
-        {
-            get
-            {
-                return kolor;
-            }
-
-        }
-
-        public bool Widoczny    // Widoczność punktu (własciwość)
-        {
-            get
-            {
-                return wid;
-            }
-            set
-            {
-                if (value) Pokaż(); else Ukryj();
-            }
-        }
     }
 }
