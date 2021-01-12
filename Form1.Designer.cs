@@ -66,6 +66,9 @@
             this.onRight = new System.Windows.Forms.Button();
             this.onUp = new System.Windows.Forms.Button();
             this.onDown = new System.Windows.Forms.Button();
+            this.wczytaj = new System.Windows.Forms.Button();
+            this.pomoc = new System.Windows.Forms.Button();
+            this.info = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // pokazSiatke
@@ -416,12 +419,45 @@
             this.onDown.UseVisualStyleBackColor = true;
             this.onDown.Click += new System.EventHandler(this.onDown_Click);
             // 
+            // wczytaj
+            // 
+            this.wczytaj.Location = new System.Drawing.Point(160, 410);
+            this.wczytaj.Name = "wczytaj";
+            this.wczytaj.Size = new System.Drawing.Size(117, 26);
+            this.wczytaj.TabIndex = 42;
+            this.wczytaj.Text = "Wczytaj z pliku";
+            this.wczytaj.UseVisualStyleBackColor = true;
+            this.wczytaj.Click += new System.EventHandler(this.wczytaj_Click);
+            // 
+            // pomoc
+            // 
+            this.pomoc.Location = new System.Drawing.Point(7, 613);
+            this.pomoc.Name = "pomoc";
+            this.pomoc.Size = new System.Drawing.Size(117, 26);
+            this.pomoc.TabIndex = 43;
+            this.pomoc.Text = "Pomoc";
+            this.pomoc.UseVisualStyleBackColor = true;
+            this.pomoc.Click += new System.EventHandler(this.pomoc_Click);
+            // 
+            // info
+            // 
+            this.info.Location = new System.Drawing.Point(7, 654);
+            this.info.Name = "info";
+            this.info.Size = new System.Drawing.Size(117, 26);
+            this.info.TabIndex = 44;
+            this.info.Text = "O programie";
+            this.info.UseVisualStyleBackColor = true;
+            this.info.Click += new System.EventHandler(this.info_Click);
+            // 
             // y1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1184, 861);
+            this.Controls.Add(this.info);
+            this.Controls.Add(this.pomoc);
+            this.Controls.Add(this.wczytaj);
             this.Controls.Add(this.onDown);
             this.Controls.Add(this.onUp);
             this.Controls.Add(this.onRight);
@@ -509,6 +545,9 @@
         private System.Windows.Forms.Button onRight;
         private System.Windows.Forms.Button onUp;
         private System.Windows.Forms.Button onDown;
+        private System.Windows.Forms.Button wczytaj;
+        private System.Windows.Forms.Button pomoc;
+        private System.Windows.Forms.Button info;
     }
 }
 

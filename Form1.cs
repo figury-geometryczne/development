@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using Punkty;
 using Figury;
 using System.Data.SqlClient;
-
+using System.IO;
 
 namespace figuryGeometryczne
 {
@@ -175,7 +175,7 @@ namespace figuryGeometryczne
                 rysx3 = int.Parse(rys_x3.Text);
                 rysy3 = int.Parse(rys_y3.Text);
                 int a, b;
-                if (rysx1 == rysx2)
+                if (rysx1 == rysx2 && rysx3 == rysx4)
                 {
                     if (rysx1 < rysx3)
                     {
@@ -186,16 +186,22 @@ namespace figuryGeometryczne
                         b = rysx1 - rysx3;
                     }
                 }
-                else if (rysx1 < rysx2)
+                else if (rysx1 == rysx3 && rysx2 == rysx4)
                 {
-                    b = rysx2 - rysx1;
+                    if (rysx1 < rysx2)
+                    {
+                        b = rysx2 - rysx1;
+                    }
+                    else
+                    {
+                        b = rysx1 - rysx2;
+                    }
                 }
                 else
                 {
-                    b = rysx1 - rysx2;
+                    b = 0;
                 }
-
-                if (rysy1 == rysy2)
+                if (rysy1 == rysy2 && rysy3 == rysy4)
                 {
                     if (rysy1 < rysy3)
                     {
@@ -206,17 +212,28 @@ namespace figuryGeometryczne
                         a = rysy1 - rysy3;
                     }
                 }
-                else if (rysy1 < rysy2)
+                else if (rysy1 == rysy3 && rysy2 == rysy4)
                 {
-                    a = rysy2 - rysy1;
+                    if (rysy1 < rysy2)
+                    {
+                        a = rysy2 - rysy1;
+                    }
+                    else
+                    {
+                        a = rysy1 - rysy2;
+                    }
+                }
+                else { a = 0; }
+                if (a == 0 || b == 0)
+                {
+                    writeResult(0);
+                    writeResult2(0);
                 }
                 else
                 {
-                    a = rysy1 - rysy2;
+                    writeResult(a * b);
+                    writeResult2((2 * a) + (2 * b));
                 }
-
-                writeResult(a * b);
-                writeResult2((2 * a) + (2 * b));
                 figura[kol] = new RysunekKw(figura[kol].X, figura[kol].Y, rysx1, rysy1, rysx2, rysy2, rysx3, rysy3, rysx4, rysy4, Color.Purple, this);
                 Invalidate();
             }
@@ -392,6 +409,54 @@ namespace figuryGeometryczne
                 }
                 rysujWspol_Click(sender, e);
             }
+        }
+
+        private void wczytaj_Click(object sender, EventArgs e)
+        {
+            string path = "wspolrzedne.txt";
+            try
+            {
+                using (StreamReader sr = new StreamReader(path))
+                {
+                    rys_x1.Text = sr.ReadLine();
+                    rys_y1.Text = sr.ReadLine();
+                    rys_x2.Text = sr.ReadLine();
+                    rys_y2.Text = sr.ReadLine();
+                    rys_x3.Text = sr.ReadLine();
+                    rys_y3.Text = sr.ReadLine();
+                    rys_x4.Text = sr.ReadLine();
+                    rys_y4.Text = sr.ReadLine();
+
+
+
+                }
+            }
+            catch (Exception f)
+            {
+                MessageBox.Show("The process failed: {0}", f.ToString());
+            }
+        }
+
+        private void pomoc_Click(object sender, EventArgs e)
+        {
+            string path = "pomoc.txt";
+            try
+            {
+                using (StreamReader sr = new StreamReader(path))
+                {
+                    string readText = File.ReadAllText(path);
+                    MessageBox.Show(readText);
+                }
+            }
+            catch (Exception f)
+            {
+                MessageBox.Show("The process failed: {0}", f.ToString());
+            }
+        }
+
+        private void info_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Program zaliczeniowy v 1.0" + Environment.NewLine + Environment.NewLine + "Autorzy:" + Environment.NewLine + "Bartłomiej Kuźba" + Environment.NewLine + "Bartłomiej Matuszewski" + Environment.NewLine + "Bohdan Deineka");
         }
     }
 }
