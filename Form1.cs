@@ -93,6 +93,7 @@ namespace figuryGeometryczne
         // RYSOWANIE Z WSPÓŁRZĘDNYCH
         private void rysujWspol_Click(object sender, EventArgs e)
         {
+            bool s1, s2, s3, s4, s5, s6, s7, s8;
             int rysx1, rysx2, rysx3, rysx4, rysy1, rysy2, rysy3, rysy4, rysr;
             if (String.IsNullOrEmpty(rys_x1.Text) && String.IsNullOrEmpty(rys_y1.Text) && String.IsNullOrEmpty(rys_x2.Text) && String.IsNullOrEmpty(rys_y2.Text) && String.IsNullOrEmpty(rys_x3.Text) && String.IsNullOrEmpty(rys_y3.Text) && String.IsNullOrEmpty(rys_x4.Text) && String.IsNullOrEmpty(rys_y4.Text))
             {
@@ -106,136 +107,179 @@ namespace figuryGeometryczne
                 }
                 else
                 {
-                    rysr = int.Parse(rys_r.Text);
-                    rysx1 = int.Parse(rys_x1.Text);
-                    rysy1 = int.Parse(rys_y1.Text);
-                    figura[kol] = new RysujOkr(figura[kol].X, figura[kol].Y, rysx1, rysy1, rysr, Color.Green, this);
-                    Invalidate();
+                    s1 = int.TryParse(rys_x1.Text, out rysx1);
+                    s2 = int.TryParse(rys_y1.Text, out rysy1);
+                    s3 = int.TryParse(rys_r.Text, out rysr);
+                    if (s1 && s2 && s3)
+                    {
+                        writeResult(Math.PI * (rysr * rysr));
+                        writeResult2(2 * Math.PI * rysr);
+                        figura[kol] = new RysujOkr(figura[kol].X, figura[kol].Y, rysx1, rysy1, rysr, Color.Green, this);
+                        Invalidate();
+                    }
+
                 }
             }
             else if ((String.IsNullOrEmpty(rys_x1.Text) || String.IsNullOrEmpty(rys_y1.Text)) && String.IsNullOrEmpty(rys_r.Text))
             {
-                rysx4 = int.Parse(rys_x4.Text);
-                rysy4 = int.Parse(rys_y4.Text);
-                rysx2 = int.Parse(rys_x2.Text);
-                rysy2 = int.Parse(rys_y2.Text);
-                rysx3 = int.Parse(rys_x3.Text);
-                rysy3 = int.Parse(rys_y3.Text);
-                figura[kol] = new Rysunek(figura[kol].X, figura[kol].Y, rysx2, rysy2, rysx3, rysy3, rysx4, rysy4, Color.Purple, this);
-                Invalidate();
+                s1 = int.TryParse(rys_x2.Text, out rysx2);
+                s2 = int.TryParse(rys_y2.Text, out rysy2);
+                s3 = int.TryParse(rys_x3.Text, out rysx3);
+                s4 = int.TryParse(rys_y3.Text, out rysy3);
+                s5 = int.TryParse(rys_x4.Text, out rysx4);
+                s6 = int.TryParse(rys_y4.Text, out rysy4);
+                if (s1 && s2 && s3 && s4 && s5 && s6)
+                {
+                    double a, b, c, h;
+                    h = (rysy2 - rysy3);
+                    a = Math.Sqrt((rysx2 - rysx3) * (rysx2 - rysx3) + (rysy2 - rysy3) * (rysy2 - rysy3));
+                    b = Math.Sqrt((rysx3 - rysx3) * (rysx3 - rysx3) + (rysy3 - rysy3) * (rysy3 - rysy3));
+                    c = Math.Sqrt((rysx2 - rysx3) * (rysx2 - rysx3) + (rysy2 - rysy3) * (rysy2 - rysy3));
+                    writeResult((c * h) / 2);
+                    writeResult2(a + b + c);
+                    figura[kol] = new Rysunek(figura[kol].X, figura[kol].Y, rysx2, rysy2, rysx3, rysy3, rysx4, rysy4, Color.Purple, this);
+                    Invalidate();
+                }
             }
             else if ((String.IsNullOrEmpty(rys_x2.Text) || String.IsNullOrEmpty(rys_y2.Text)) && String.IsNullOrEmpty(rys_r.Text))
             {
-                rysx1 = int.Parse(rys_x1.Text);
-                rysy1 = int.Parse(rys_y1.Text);
-                rysx4 = int.Parse(rys_x4.Text);
-                rysy4 = int.Parse(rys_y4.Text);
-                rysx3 = int.Parse(rys_x3.Text);
-                rysy3 = int.Parse(rys_y3.Text);
-                figura[kol] = new Rysunek(figura[kol].X, figura[kol].Y, rysx1, rysy1, rysx3, rysy3, rysx4, rysy4, Color.Purple, this);
-                Invalidate();
+                s1 = int.TryParse(rys_x1.Text, out rysx1);
+                s2 = int.TryParse(rys_y1.Text, out rysy1);
+                s3 = int.TryParse(rys_x3.Text, out rysx3);
+                s4 = int.TryParse(rys_y3.Text, out rysy3);
+                s5 = int.TryParse(rys_x4.Text, out rysx4);
+                s6 = int.TryParse(rys_y4.Text, out rysy4);
+                if (s1 && s2 && s3 && s4 && s5 && s6)
+                {
+                    double a, b, c, h;
+                    h = (rysy3 - rysy1);
+                    a = Math.Sqrt((rysx3 - rysx1) * (rysx3 - rysx1) + (rysy3 - rysy1) * (rysy3 - rysy1));
+                    b = Math.Sqrt((rysx3 - rysx1) * (rysx3 - rysx1) + (rysy3 - rysy1) * (rysy3 - rysy1));
+                    c = Math.Sqrt((rysx3 - rysx3) * (rysx3 - rysx3) + (rysy3 - rysy3) * (rysy3 - rysy3));
+                    writeResult((c * h) / 2);
+                    writeResult2(a + b + c);
+                    figura[kol] = new Rysunek(figura[kol].X, figura[kol].Y, rysx1, rysy1, rysx3, rysy3, rysx4, rysy4, Color.Purple, this);
+                    Invalidate();
+                }
             }
             else if ((String.IsNullOrEmpty(rys_x3.Text) || String.IsNullOrEmpty(rys_y3.Text)) && String.IsNullOrEmpty(rys_r.Text))
             {
-                rysx1 = int.Parse(rys_x1.Text);
-                rysy1 = int.Parse(rys_y1.Text);
-                rysx2 = int.Parse(rys_x2.Text);
-                rysy2 = int.Parse(rys_y2.Text);
-                rysx4 = int.Parse(rys_x4.Text);
-                rysy4 = int.Parse(rys_y4.Text);
-                figura[kol] = new Rysunek(figura[kol].X, figura[kol].Y, rysx1, rysy1, rysx2, rysy2, rysx4, rysy4, Color.Purple, this);
-                Invalidate();
+                s1 = int.TryParse(rys_x2.Text, out rysx2);
+                s2 = int.TryParse(rys_y2.Text, out rysy2);
+                s3 = int.TryParse(rys_x1.Text, out rysx1);
+                s4 = int.TryParse(rys_y1.Text, out rysy1);
+                s5 = int.TryParse(rys_x4.Text, out rysx4);
+                s6 = int.TryParse(rys_y4.Text, out rysy4);
+                if (s1 && s2 && s3 && s4 && s5 && s6)
+                {
+                    double a, b, c, h;
+                    h = (rysy2 - rysy1);
+                    a = Math.Sqrt((rysx2 - rysx1) * (rysx2 - rysx1) + (rysy2 - rysy1) * (rysy2 - rysy1));
+                    b = Math.Sqrt((rysx4 - rysx1) * (rysx4 - rysx1) + (rysy4 - rysy1) * (rysy4 - rysy1));
+                    c = Math.Sqrt((rysx2 - rysx4) * (rysx2 - rysx4) + (rysy2 - rysy4) * (rysy2 - rysy4));
+                    writeResult((c * h) / 2);
+                    writeResult2(a + b + c);
+                    figura[kol] = new Rysunek(figura[kol].X, figura[kol].Y, rysx1, rysy1, rysx2, rysy2, rysx4, rysy4, Color.Purple, this);
+                    Invalidate();
+                }
             }
             else if ((String.IsNullOrEmpty(rys_x4.Text) || String.IsNullOrEmpty(rys_y4.Text)) && String.IsNullOrEmpty(rys_r.Text))
             {
-                rysx1 = int.Parse(rys_x1.Text);
-                rysy1 = int.Parse(rys_y1.Text);
-                rysx2 = int.Parse(rys_x2.Text);
-                rysy2 = int.Parse(rys_y2.Text);
-                rysx3 = int.Parse(rys_x3.Text);
-                rysy3 = int.Parse(rys_y3.Text);
-                double a, b, c, h;
-                h = (rysy2 - rysy1);
-                a = Math.Sqrt((rysx2 - rysx1) * (rysx2 - rysx1) + (rysy2 - rysy1) * (rysy2 - rysy1));
-                b = Math.Sqrt((rysx3 - rysx1) * (rysx3 - rysx1) + (rysy3 - rysy1) * (rysy3 - rysy1));
-                c = Math.Sqrt((rysx2 - rysx3) * (rysx2 - rysx3) + (rysy2 - rysy3) * (rysy2 - rysy3));
-                writeResult((c * h) / 2);
-                writeResult2(a + b + c);
-                figura[kol] = new Rysunek(figura[kol].X, figura[kol].Y, rysx1, rysy1, rysx2, rysy2, rysx3, rysy3, Color.Purple, this);
-                Invalidate();
+                s1 = int.TryParse(rys_x2.Text, out rysx2);
+                s2 = int.TryParse(rys_y2.Text, out rysy2);
+                s3 = int.TryParse(rys_x3.Text, out rysx3);
+                s4 = int.TryParse(rys_y3.Text, out rysy3);
+                s5 = int.TryParse(rys_x1.Text, out rysx1);
+                s6 = int.TryParse(rys_y1.Text, out rysy1);
+                if (s1 && s2 && s3 && s4 && s5 && s6)
+                {
+                    double a, b, c, h;
+                    h = (rysy2 - rysy1);
+                    a = Math.Sqrt((rysx2 - rysx1) * (rysx2 - rysx1) + (rysy2 - rysy1) * (rysy2 - rysy1));
+                    b = Math.Sqrt((rysx3 - rysx1) * (rysx3 - rysx1) + (rysy3 - rysy1) * (rysy3 - rysy1));
+                    c = Math.Sqrt((rysx2 - rysx3) * (rysx2 - rysx3) + (rysy2 - rysy3) * (rysy2 - rysy3));
+                    writeResult((c * h) / 2);
+                    writeResult2(a + b + c);
+                    figura[kol] = new Rysunek(figura[kol].X, figura[kol].Y, rysx1, rysy1, rysx2, rysy2, rysx3, rysy3, Color.Purple, this);
+                    Invalidate();
+                }
+                
             }
             else if (String.IsNullOrEmpty(rys_r.Text))
             {
-                rysx1 = int.Parse(rys_x1.Text);
-                rysy1 = int.Parse(rys_y1.Text);
-                rysx4 = int.Parse(rys_x4.Text);
-                rysy4 = int.Parse(rys_y4.Text);
-                rysx2 = int.Parse(rys_x2.Text);
-                rysy2 = int.Parse(rys_y2.Text);
-                rysx3 = int.Parse(rys_x3.Text);
-                rysy3 = int.Parse(rys_y3.Text);
-                int a, b;
-                if (rysx1 == rysx2 && rysx3 == rysx4)
+                s1 = int.TryParse(rys_x2.Text, out rysx2);
+                s2 = int.TryParse(rys_y2.Text, out rysy2);
+                s3 = int.TryParse(rys_x3.Text, out rysx3);
+                s4 = int.TryParse(rys_y3.Text, out rysy3);
+                s5 = int.TryParse(rys_x1.Text, out rysx1);
+                s6 = int.TryParse(rys_y1.Text, out rysy1);
+                s7 = int.TryParse(rys_x4.Text, out rysx4);
+                s8 = int.TryParse(rys_y4.Text, out rysy4);
+                if (s1 && s2 && s3 && s4 && s5 && s6 && s7 && s8)
                 {
-                    if (rysx1 < rysx3)
+                    int a, b;
+                    if (rysx1 == rysx2 && rysx3 == rysx4)
                     {
-                        b = rysx3 - rysx1;
+                        if (rysx1 < rysx3)
+                        {
+                            b = rysx3 - rysx1;
+                        }
+                        else
+                        {
+                            b = rysx1 - rysx3;
+                        }
+                    }
+                    else if (rysx1 == rysx3 && rysx2 == rysx4)
+                    {
+                        if (rysx1 < rysx2)
+                        {
+                            b = rysx2 - rysx1;
+                        }
+                        else
+                        {
+                            b = rysx1 - rysx2;
+                        }
                     }
                     else
                     {
-                        b = rysx1 - rysx3;
+                        b = 0;
                     }
-                }
-                else if (rysx1 == rysx3 && rysx2 == rysx4)
-                {
-                    if (rysx1 < rysx2)
+                    if (rysy1 == rysy2 && rysy3 == rysy4)
                     {
-                        b = rysx2 - rysx1;
+                        if (rysy1 < rysy3)
+                        {
+                            a = rysy3 - rysy1;
+                        }
+                        else
+                        {
+                            a = rysy1 - rysy3;
+                        }
+                    }
+                    else if (rysy1 == rysy3 && rysy2 == rysy4)
+                    {
+                        if (rysy1 < rysy2)
+                        {
+                            a = rysy2 - rysy1;
+                        }
+                        else
+                        {
+                            a = rysy1 - rysy2;
+                        }
+                    }
+                    else { a = 0; }
+                    if (a == 0 || b == 0)
+                    {
+                        writeResult(0);
+                        writeResult2(0);
                     }
                     else
                     {
-                        b = rysx1 - rysx2;
+                        writeResult(a * b);
+                        writeResult2((2 * a) + (2 * b));
                     }
+                    figura[kol] = new RysunekKw(figura[kol].X, figura[kol].Y, rysx1, rysy1, rysx2, rysy2, rysx3, rysy3, rysx4, rysy4, Color.Purple, this);
+                    Invalidate();
                 }
-                else
-                {
-                    b = 0;
-                }
-                if (rysy1 == rysy2 && rysy3 == rysy4)
-                {
-                    if (rysy1 < rysy3)
-                    {
-                        a = rysy3 - rysy1;
-                    }
-                    else
-                    {
-                        a = rysy1 - rysy3;
-                    }
-                }
-                else if (rysy1 == rysy3 && rysy2 == rysy4)
-                {
-                    if (rysy1 < rysy2)
-                    {
-                        a = rysy2 - rysy1;
-                    }
-                    else
-                    {
-                        a = rysy1 - rysy2;
-                    }
-                }
-                else { a = 0; }
-                if (a == 0 || b == 0)
-                {
-                    writeResult(0);
-                    writeResult2(0);
-                }
-                else
-                {
-                    writeResult(a * b);
-                    writeResult2((2 * a) + (2 * b));
-                }
-                figura[kol] = new RysunekKw(figura[kol].X, figura[kol].Y, rysx1, rysy1, rysx2, rysy2, rysx3, rysy3, rysx4, rysy4, Color.Purple, this);
-                Invalidate();
             }
             else
             {
@@ -413,22 +457,47 @@ namespace figuryGeometryczne
 
         private void wczytaj_Click(object sender, EventArgs e)
         {
+            int temp=0;
             string path = "wspolrzedne.txt";
+            string path2 = "wspolrzedne.txt";
             try
             {
-                using (StreamReader sr = new StreamReader(path))
+                using (StreamReader hr = new StreamReader(path))
                 {
-                    rys_x1.Text = sr.ReadLine();
-                    rys_y1.Text = sr.ReadLine();
-                    rys_x2.Text = sr.ReadLine();
-                    rys_y2.Text = sr.ReadLine();
-                    rys_x3.Text = sr.ReadLine();
-                    rys_y3.Text = sr.ReadLine();
-                    rys_x4.Text = sr.ReadLine();
-                    rys_y4.Text = sr.ReadLine();
 
+                    while (hr.Peek() >= 0)
+                    {
+                        Console.WriteLine(hr.ReadLine());
+                        temp++;
+                    }
+                }
+            }
+            catch (Exception f)
+            {
+                MessageBox.Show("The process failed: {0}", f.ToString());
+            }
 
-
+            try
+            {
+                using (StreamReader sr = new StreamReader(path2))
+                {
+                    if (temp > 3)
+                    {
+                        rys_x1.Text = sr.ReadLine();
+                        rys_y1.Text = sr.ReadLine();
+                        rys_x2.Text = sr.ReadLine();
+                        rys_y2.Text = sr.ReadLine();
+                        rys_x3.Text = sr.ReadLine();
+                        rys_y3.Text = sr.ReadLine();
+                        rys_x4.Text = sr.ReadLine();
+                        rys_y4.Text = sr.ReadLine();
+                    }
+                    else
+                    {
+                        rys_x1.Text = sr.ReadLine();
+                        rys_y1.Text = sr.ReadLine();
+                        rys_r.Text = sr.ReadLine();
+                    }
                 }
             }
             catch (Exception f)
